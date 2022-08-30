@@ -24,7 +24,7 @@ def jogo_forca():
   enforcou = False
   acertou = False   
   
-  # definindo funções
+  # definindo uma compressão de lista
   
   def check_len():
    saida_chave = ['_' for i in palavra_chave]
