@@ -25,10 +25,9 @@ def jogo_forca():
   acertou = False   
   
   # definindo funções
-
+  
   def check_len():
-    for i in palavra_chave:
-      saida_chave.append('_')
+   saida_chave = ['_' for i in palavra_chave]
 
   check_len()
 
