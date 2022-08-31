@@ -12,6 +12,13 @@ def jogo_forca():
   hoje = data.date.today()
   nome_usuario = input()
   print('bem vindo:'+' '+nome_usuario+' '+'data de acesso:'+' '+str(hoje))
+  
+  # definindo palavras secretas
+  def gerador_palavras():
+      palavras = pd.read_excel(r'C:\palavras.xlsx',usecols = ['palavras'])
+        df = pd.DataFrame(data = palavras)
+        lista = df['palavras'].tolist()
+           for item in lista:
 
   # definindo variaveis
 
