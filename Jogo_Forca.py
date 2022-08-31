@@ -18,7 +18,6 @@ def jogo_forca():
       palavras = pd.read_excel(r'C:\palavras.xlsx',usecols = ['palavras'])
         df = pd.DataFrame(data = palavras)
         lista = df['palavras'].tolist()
-           for item in lista:
 
   # definindo variaveis
 
