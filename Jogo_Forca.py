@@ -3,6 +3,7 @@ def jogo_forca():
   #realiza importacao 
     
   import datetime as data
+  import random as rd
     
     
   #inicio do jogo
@@ -12,16 +13,23 @@ def jogo_forca():
   hoje = data.date.today()
   nome_usuario = input()
   print('bem vindo:'+' '+nome_usuario+' '+'data de acesso:'+' '+str(hoje))
-  
-  # definindo palavras secretas
+
+
+  # Definindo gerador de palavras
+
+  palavras = []
   def gerador_palavras():
-      palavras = pd.read_excel(r'C:\palavras.xlsx',usecols = ['palavras'])
-        df = pd.DataFrame(data = palavras)
-        lista = df['palavras'].tolist()
+      with open('palavras.txt','r') as arq:
+          for i in arq:
+              palavras.append(i.strip())
+          arq.close()
+          return 
+      palavras
+  gerador_palavras()
 
   # definindo variaveis
-
-  palavra_chave = 'Rodrigo'
+  numero_aleatorio = rd.randrange(1,len(palavras))
+  palavra_chave = palavras[numero_aleatorio]
   saida_chave = []
   acertos = []
   total_letras = len(palavra_chave)
@@ -30,10 +38,11 @@ def jogo_forca():
   enforcou = False
   acertou = False   
   
-  # definindo uma compressão de lista
-  
+  # definindo funções
+
   def check_len():
-   saida_chave = ['_' for i in palavra_chave]
+    for i in palavra_chave:
+      saida_chave.append('_')
 
   check_len()
 
@@ -77,6 +86,7 @@ def jogo_forca():
       print(saida_chave)
     elif (enforcou == True):
       print('Acabaram as chances')
+      print('A palavra secreta era: {}'.format(palavra_chave))
       enforcou = True
       break
       
