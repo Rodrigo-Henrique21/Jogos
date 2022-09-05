@@ -76,7 +76,18 @@ def jogo_forca():
         acertos.append(posicao_inicial)
       if ('_' not in saida_chave):
         print(saida_chave)
-        print('parabens acertou')
+        print('Parabéns acertou')
+        print("Parabéns, você ganhou!")
+        print("       ___________      ")
+        print("      '._==_==_=_.'     ")
+        print("      .-\\:      /-.    ")
+        print("     | (|:.     |) |    ")
+        print("      '-|:.     |-'     ")
+        print("        \\::.    /      ")
+        print("         '::. .'        ")
+        print("           ) (          ")
+        print("         _.' '._        ")
+        print("        '-------'       ")
         acertou = True
         break
         
